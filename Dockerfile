@@ -24,6 +24,8 @@ LABEL description="A generic kubectl app"
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
+
 WORKDIR /appuser
 USER appuser
+
 ENTRYPOINT ["/usr/local/bin/kubectl"]
